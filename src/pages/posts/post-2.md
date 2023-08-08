@@ -8,8 +8,9 @@ image:
 pubDate: 2023-08-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/blog/">Blog</a>
 
 After a successful first hour learning Astro, I decided to try some more. I wrote and imported a small component from memory!
