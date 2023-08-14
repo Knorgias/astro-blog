@@ -15,10 +15,14 @@
 		<title>{pageTitle}</title>
 	</head>
 	<body>
+  <p>The Baselayout pre-header</p>
 		<Header />
 		<h1>{pageTitle}</h1>
+    <p>The Baselayout post-header</p>
     <slot />
+    <p>The Baselayout pre-footer</p>
 		<Footer />
+    <p>The Baselayout post-footer</p>
 		<script>
 			import "../scripts/menu.js"
 		</script>
