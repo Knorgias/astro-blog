@@ -3,11 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Homepage";
 
 import { getCollection, getEntry } from 'astro:content';
+import { MyLitCard } from '../components/my-lit-card.js';
+
 
 const demo1 = await getEntry('demos', 'demo-1');
 const week2 = await getEntry('newsletters', 'week-2');
 ---
 <BaseLayout pageTitle={pageTitle}>
+	<MyLitCard/>
 	<div>
 		<h2>My awesome blog subtitle</h2>
 		<h1>There's my Astronaut!🧑‍🚀</h1>
