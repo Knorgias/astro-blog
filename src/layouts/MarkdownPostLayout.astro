@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.slice(0, 10)}</p>
+  <p>{frontmatter.pubDate.toDateString()}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by {frontmatter.author}</p>
   /** In order to use props (values passed) from a .md blog post in your layout, like tags, you need to prefix the value with `frontmatter.` */
