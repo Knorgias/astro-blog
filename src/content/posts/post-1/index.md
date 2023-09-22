@@ -3,9 +3,11 @@ title: 'My First Blog Post'
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
+cover: './cover.png'
+coverAlt: 'Alt text.'
 image:
-  url: 'https://docs.astro.build/assets/full-logo-light.png'
-  alt: 'The full Astro logo.'
+  url: '../../../../public/cover.png'
+  alt: 'Astro logo.'
 tags: ['knorgias', 'blogging', 'learning in public']
 ---
 

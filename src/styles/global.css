@@ -6,7 +6,6 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
   padding: 1rem;
   line-height: 1.5;
 }
@@ -64,7 +63,6 @@ a:focus {
 
 @media screen and (min-width: 450px) {
   .nav-links {
-    margin-left: 5em;
     display: block;
     position: static;
     width: auto;

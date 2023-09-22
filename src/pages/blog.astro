@@ -1,14 +1,65 @@
 ---
-import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { MyCard } from "../components/my-card";
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-  
-const allPosts = await getCollection("posts");
+
+const allPosts = await getCollection('posts');
 const pageTitle = "Knorgias' 👨‍🚀 Blog";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    {allPosts.map((post) => <BlogPost url={'/posts/' + post.slug} title={post.data.title} />)}
-  </ul> 
+  <div class="big-placeholder-div">
+    <p>This is where I will post about my journey learning Astro.</p>
+  </div>
+<div class="blog-posts">
+  {
+    allPosts.map((post) => (
+      <div class="card">
+        <Image src={post.data.cover} alt="" />
+        <h2>
+          <a href={"/posts/" + post.slug}>{post.data.title}</a>
+        </h2>
+      </div>
+    ))
+  }
+</div>
+<div class="big-placeholder-div"></div>
 </BaseLayout>
+
+
+<style>
+  .blog-posts {
+    display: flex;
+    justify-content: space-around;
+    grid: auto / repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .card {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+.card img {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px 5px 0 0;
+}
+
+.card h2 {
+  text-align: center;
+  border-top: 2px solid black;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.big-placeholder-div {
+  height: 300px;
+}
+</style>

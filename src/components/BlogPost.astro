@@ -1,5 +1,6 @@
 ---
-const { url, title } = Astro.props;
+import { MyCard } from './my-card.js';
+const { url, title, imgSrc } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<MyCard imageUrl={imgSrc} heading={title} client:load />
