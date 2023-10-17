@@ -2,12 +2,8 @@
 title: My Third Blog Post
 author: Astro Learner
 description: 'I had some challenges, but asking in the community really helped!'
-cover: './cover.png'
-coverAlt: 'Alt text.'
-image:
-  url: 'https://docs.astro.build/assets/rays.webp'
-  alt: 'Thumbnail of Astro rays.'
-pubDate: 2023-08-08
+image: '../images/posts/post-3/sci-fi-post-3.png'
+date: 2023-08-08
 tags: ['astro', 'learning in public', 'setbacks', 'community']
 ---
 

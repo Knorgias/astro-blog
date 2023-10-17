@@ -1,6 +1,7 @@
 ---
-import { MyCard } from './my-card.js';
+import { MyCard } from './lit-components/my-card.js';
 const { url, title, imgSrc } = Astro.props;
 ---
 
 <MyCard imageUrl={imgSrc} heading={title} client:load />
+./lit-components/my-card.js

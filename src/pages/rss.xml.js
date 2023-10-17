@@ -9,7 +9,7 @@ export async function get() {
     site: 'https://knorgias-astro-blog.netlify.app/blog/',
     items: posts.map((post) => ({
       title: post.data.title,
-      pubDate: post.data.pubDate,
+      date: post.data.date,
       description: post.data.description,
       link: `/posts/${post.slug}/`,
     })),

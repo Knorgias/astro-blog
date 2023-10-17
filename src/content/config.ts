@@ -17,21 +17,14 @@ const newsletterCollection = defineCollection({
 
 const postsCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      pubDate: z.date(),
-      description: z.string(),
-      author: z.string(),
-      cover: image(),
-      coverAlt: z.string().optional(),
-      image: z.object({
-        url: z.string(),
-        alt: z.string(),
-      }),
-
-      tags: z.array(z.string()),
-    }),
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    date: z.date(),
+    description: z.string(),
+    author: z.string(),
+    image: image(),
+    tags: z.array(z.string()),
+  }),
 });
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"

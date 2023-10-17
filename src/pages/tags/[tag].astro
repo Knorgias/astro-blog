@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
-<BaseLayout pageTitle={tag}>
+<BaseLayout title={tag}>
   <p> This content is dynamically created for each tag key-value pair in function <pre>getStaticPaths()</pre> of file <pre>pages/tags/[tag].astro</pre></p>
   <p>Posts tagged with {tag}</p>
   <ul>

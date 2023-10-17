@@ -1,65 +1,30 @@
 ---
-import { Image } from "astro:assets";
-import { MyCard } from "../components/my-card";
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../components/BlogPost.astro';
+import PostList from '../components/PostList.astro';
+import Main from '../components/Main.astro';
+import H1 from '../components/H1.astro';
+import { getCollection } from 'astro:content';
 
-const allPosts = await getCollection('posts');
-const pageTitle = "Knorgias' 👨‍🚀 Blog";
+const posts = await getCollection('posts');
+const title = "Knorgias' 👨‍🚀 Blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <div class="big-placeholder-div">
-    <p>This is where I will post about my journey learning Astro.</p>
-  </div>
-<div class="blog-posts">
-  {
-    allPosts.map((post) => (
-      <div class="card">
-        <Image src={post.data.cover} alt="" />
-        <h2>
-          <a href={"/posts/" + post.slug}>{post.data.title}</a>
-        </h2>
-      </div>
-    ))
-  }
-</div>
-<div class="big-placeholder-div"></div>
+<BaseLayout title={title}>
+  <Main>
+    <H1 text="Welcome to the blog of Synnefonk!" />
+    <PostList posts={posts} />
+  </Main>
+  <!-- <div class="blog-posts">
+    {
+      posts.map((post) => (
+        <div class="card">
+          <Image src={post.data.image} alt="" class="cover-image" />
+          <h2>
+            <a href={"/posts/" + post.slug}>{post.data.title}</a>
+          </h2>
+        </div>
+      ))
+    }
+  </div> -->
+  <div class="big-placeholder-div"></div>
 </BaseLayout>
-
-
-<style>
-  .blog-posts {
-    display: flex;
-    justify-content: space-around;
-    grid: auto / repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  .card {
-  display: flex;
-  flex-direction: column;
-  height: 160px;
-  width: 200px;
-  border: 2px solid black;
-  border-radius: 5px;
-  background-color: lightgrey;
-}
-
-.card img {
-  width: 100%;
-  height: 80px;
-  border-radius: 5px 5px 0 0;
-}
-
-.card h2 {
-  text-align: center;
-  border-top: 2px solid black;
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
-}
-
-.big-placeholder-div {
-  height: 300px;
-}
-</style>

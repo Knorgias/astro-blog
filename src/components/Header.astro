@@ -1,12 +1,17 @@
 ---
-import Navigation from './Navigation.astro';
+import Image from 'astro:assets';
 import Hamburger from './Hamburger.astro';
 ---
 
 <header>
   <nav>
     <Hamburger />
-    <Navigation />
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/tags/">Tags</a>
+    </div>
   </nav>
 </header>
 
